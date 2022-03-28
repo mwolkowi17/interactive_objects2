@@ -5,6 +5,7 @@ import {Field} from './Field'
 import { OrbitControls } from '@react-three/drei'
 import {Model1} from './Modeltest'
 import {Roller1} from './Roller1'
+import {Model} from './ModelLoader'
 
 
 function Box(props) {
@@ -34,15 +35,13 @@ export default function App() {
 
   return (
     
-    <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 3, 4.8] }}>
+    <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [-4, 6, 6] }}>
       <OrbitControls />
       <Suspense fallback={null}>
       <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      
-      <Field position={[0,-1,-0.3]} rotation={[-Math.PI/2,0,0]} />
-    
-      <Roller1 position={[-2.82,-1,0.3]} scale={[0.023,0.023,0.023]} />
+     {/*pointLight position={[10, 10, 10]} />*/}
+      <Box position = {[0,0,0]} />
+     <Model position={[0,0,0]} scale={[8,8,8]} />
       </Suspense>
     </Canvas>
   )
